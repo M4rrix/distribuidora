@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo"> <h1>Distribuidora</h1> </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#carrito">Carrito</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="categorias">
+            <h2>Categorías</h2>
+            <div class="categorias-container">
+                <button id="btn-todos" class="activo" onclick="filtrarPorCategoria('todos', this)">Todos</button>
+                <button id="btn-papel" onclick="filtrarPorCategoria('Papel Higiénico', this)">Papel Higiénico</button>
+                <button id="btn-plasticos" onclick="filtrarPorCategoria('Plásticos', this)">Plásticos</button>
+                <button id="btn-desinfectantes" onclick="filtrarPorCategoria('Desinfectantes', this)">Desinfectantes</button>
+            </div>
+        </section>
+
+        <section id="productos">
+            <h2>Productos</h2>
+               <!-- Buscador de productos -->
+            <div class="buscador-container">
+                <input type="text" id="buscador" placeholder="Buscar productos...">
+                <div id="sugerencias" class="sugerencias-container"></div>
+            </div>
+            <div class="productos-container">
+                <!-- Aquí se cargarán los productos dinámicamente -->
+            </div>
+        </section>
+        
+        <section id="carrito" class="carrito">
+            <h2>Carrito de Compras</h2>
+            <div class="carrito-container"></div>
+            <!-- Botón de WhatsApp -->
+    <button class="btn-whatsapp" onclick="enviarWhatsapp()">Consultar por WhatsApp</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Distribuidora. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
