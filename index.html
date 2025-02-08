@@ -9,8 +9,9 @@
 <body>
     <header>
         <div class="logo"> <h1>Distribuidora</h1> </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#categorias">Categorías</a></li>
                 <li><a href="#carrito">Carrito</a></li>
@@ -21,7 +22,7 @@
 
     <main>
         <section id="categorias">
-            <h2>Categorías</h2>
+          <!--  <h2>Categorías</h2> -->
             <div class="categorias-container">
                 <button id="btn-todos" class="activo" onclick="filtrarPorCategoria('todos', this)">Todos</button>
                 <button id="btn-papel" onclick="filtrarPorCategoria('Papel Higiénico', this)">Papel Higiénico</button>
@@ -31,7 +32,7 @@
         </section>
 
         <section id="productos">
-            <h2>Productos</h2>
+           <!-- <h2>Productos</h2> -->
                <!-- Buscador de productos -->
             <div class="buscador-container">
                 <input type="text" id="buscador" placeholder="Buscar productos...">

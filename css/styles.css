@@ -6,45 +6,101 @@ body {
     box-sizing: border-box;
 }
 
-/* Encabezado */
+/* Encabezado fijo */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #007BFF;
+    background-color: #F7C93B;
     color: white;
     padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustar el logo y menú */
+.logo {
+    flex: 1;
+    text-align: right;
+}
+
+nav {
+    flex: 2;
+    text-align: right;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
 }
 
+nav a:hover {
+    color: #333;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+
 /* Categorías */
+
+
 
 .categoria {
     margin-bottom: 2rem;
 }
 
 .categorias-container {
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 130px !important;
+}
+
+/* Asegurar que el buscador y las categorías siempre sean visibles */
+.buscador-container {
+    width: 50%;
     display: flex;
-    gap: 1rem;
-    padding: 1rem;
     justify-content: center;
 }
+
+
 
 .categorias-container button {
     padding: 0.5rem 1rem;
     border: none;
-    background-color: #28a745;
+    background-color: #F1A948;
     color: white;
     cursor: pointer;
     font-size: 1rem;
@@ -69,7 +125,7 @@ nav a {
 }
 
 .categorias-container button.activo {
-    background-color: #155724;
+    background-color: #F1A948;
     color: white;
     font-weight: bold;
     border: 2px solid #0b3d1a;
@@ -254,17 +310,18 @@ nav a {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #007BFF;
+    background-color: #F7C93B;
     color: white;
     margin-top: 2rem;
 }
 
-/* Responsividad */
+/*Responsividad*/
 @media (max-width: 768px) {
+    /* Productos */
     .productos-container {
         grid-template-columns: 1fr;  /* Una sola columna en pantallas pequeñas */
     }
-    
+
     .producto {
         max-width: 100%; /* Asegura que los productos ocupen todo el espacio disponible */
     }
@@ -273,22 +330,111 @@ footer {
         width: 100%;
         max-width: 100%;  /* El selector también debe ocupar el 100% */
     }
-}
 
-@media (max-width: 768px) {
+    /* Header y menú */
     header {
-        flex-direction: column;
+        flex-direction: row-reverse;
+        align-items: center;
         text-align: center;
     }
+
+    .menu-toggle {
+        display: block;
+        order: -1; /* Pone el botón de menú a la izquierda */
+    }
+
+    .logo {
+        text-align: right;
+        order: 2; /* Mueve el logo a la derecha */
+    }
+
+    nav {
+        width: 100%;
+        text-align: left;
+    }
+
     nav ul {
+        display: none;
         flex-direction: column;
-        padding: 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #F7C93B;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+        width: 100%;
+    }
+
+    /* Categorías y buscador */
     .categorias-container {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        flex-wrap: wrap; /* Permite que los botones pasen a otra línea si no caben */
+        justify-content: center;
+        gap: 5px; /* Espaciado entre botones */
+        padding: 10px;
     }
+
+    .categorias-container button {
+        flex: 1 1 calc(50% - 10px); /* Distribuye los botones en dos columnas en móviles */
+        min-width: 120px; /* Evita que sean demasiado pequeños */
+        text-align: center;
+        padding: 8px; /* Ajusta el padding */
+    }
+
     .carrito-container {
         width: 90%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .categorias-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .categorias-container button {
+        flex: 1 1 auto;
+        min-width: 150px;
+    }
+}
+
+@media (min-width: 769px) {
+    .buscador-container, .categorias-container {
+        display: flex !important;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Ajuste general para mantener alineación */
+@media (min-width: 1025px) {
+    .categorias-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .categorias-container button {
+        flex: 0 1 auto;
+        min-width: 150px;
     }
 }

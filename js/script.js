@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
     cargarProductos();
     document.getElementById("buscador").addEventListener("input", filtrarProductos);
@@ -18,6 +20,10 @@ async function cargarProductos() {
     }
 }
 
+function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
+}
+
 function mostrarProductos(productos) {
     const contenedor = document.querySelector(".productos-container");
     contenedor.innerHTML = "";
@@ -30,7 +36,7 @@ function mostrarProductos(productos) {
             <div class="producto">
                 <img src="${producto.imagen}" alt="${producto.nombre}">
                 <h3>${producto.nombre}</h3>
-                
+    
                 
                 <!-- Dropdown de marcas -->
                 <select class="marca-select" id="select-${producto.id}">
@@ -43,7 +49,7 @@ function mostrarProductos(productos) {
         `;
         contenedor.innerHTML += productoHTML;
     });
-}
+} 
 
 // 🚀 Filtrar productos por categoría
 function filtrarPorCategoria(categoria, boton) {
@@ -190,4 +196,5 @@ function enviarWhatsapp() {
     const whatsappLink = `https://wa.me/2920308378?text=${encodeURIComponent(mensaje)}`;
     window.open(whatsappLink, "_blank");
 }
+
 
