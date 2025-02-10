@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distribuidora - Inicio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/logo.jpeg">
+   <!-- <link rel="stylesheet" href="css/stylesprueba.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
 <body>
     <header>
-        <div class="logo"> <h1>Distribuidora</h1> </div>
+        <div class="logo">
+            <img src="img/logo.jpeg" alt="Distribuidora El Sol" class="header-logo">
+        </div>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav>
             <ul class="nav-links">
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#categorias">Categorías</a></li>
-                <li><a href="#carrito">Carrito</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#categorias">Productos</a></li>
+                <li><a href="#carrito"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#contacto"><i class="fas fa-envelope"></i></a></li>
+
             </ul>
         </nav>
     </header>
@@ -44,7 +51,7 @@
         </section>
         
         <section id="carrito" class="carrito">
-            <h2>Carrito de Compras</h2>
+            <h2><i class="fas fa-shopping-cart fa-2x"></i></h2>
             <div class="carrito-container"></div>
             <!-- Botón de WhatsApp -->
     <button class="btn-whatsapp" onclick="enviarWhatsapp()">Consultar por WhatsApp</button>
@@ -52,9 +59,19 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Distribuidora. Todos los derechos reservados.</p>
+        <div class="footer-contacto">
+            <a href="https://www.instagram.com/tu_cuenta" target="_blank">
+                <i class="fab fa-instagram fa-2x" style="color: #E4405F;"></i>
+            </a>
+            <p>📞 +54 9 2920 XXXXXXX</p>
+        </div>
+        <p>&copy; 2025 El Sol Distribuidora. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

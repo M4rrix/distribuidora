@@ -2,42 +2,42 @@
     {
         "id": 1,
         "nombre": "Papel Higiénico",
-        "imagen": "img/ayudin.jpg",
+        "imagen": "img/papelhigienico.jpeg",
         "categoria": "Papel Higiénico",
         "marcas": ["Marca A", "Marca B", "Marca C"]
     },
     {
         "id": 2,
         "nombre": "Papel Higiénico Doble",
-        "imagen": "img/ayudin.jpg",
+        "imagen": "img/papelhigienico.jpeg",
         "categoria": "Papel Higiénico",
         "marcas": ["Marca A", "Marca B", "Marca C"]
     },
     {
         "id": 3,
         "nombre": "Papel Higiénico Doble Hoja",
-        "imagen": "img/ayudin.jpg",
+        "imagen": "img/papelhigienico.jpeg",
         "categoria": "Papel Higiénico",
         "marcas": ["Marca A", "Marca B", "Marca C"]
     },
     {
         "id": 4,
         "nombre": "Plato descartable",
-        "imagen": "img/ayudin.jpg",
+        "imagen": "img/platodescartable.png",
         "categoria": "Plásticos",
         "marcas": ["Marca A", "Marca B", "Marca C"]
     },
     {
         "id": 5,
         "nombre": "Plato descartable",
-        "imagen": "img/ayudin.jpg",
+        "imagen": "img/platodescartable.png",
         "categoria": "Plásticos",
         "marcas": ["Marca A", "Marca B", "Marca C"]
     },
     {
         "id": 6,
         "nombre": "Plato descartable",
-        "imagen": "img/ayudin.jpg",
+        "imagen": "img/platodescartable.png",
         "categoria": "Plásticos",
         "marcas": ["Marca A", "Marca B", "Marca C"]
     },

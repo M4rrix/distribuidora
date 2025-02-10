@@ -21,8 +21,17 @@ async function cargarProductos() {
 }
 
 function toggleMenu() {
-    document.querySelector(".nav-links").classList.toggle("active");
+    document.querySelector("nav ul").classList.toggle("active");
 }
+
+//asegurar de que el menú desaparezca al hacer clic en un enlace
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("nav a").forEach(link => {
+        link.addEventListener("click", () => {
+            document.querySelector("nav ul").classList.remove("active");
+        });
+    });
+});
 
 function mostrarProductos(productos) {
     const contenedor = document.querySelector(".productos-container");
@@ -103,8 +112,10 @@ function seleccionarSugerencia(nombre) {
 // 🚀 Función para filtrar productos en tiempo real por búsqueda y categoría
 function filtrarProductos() {
     const busqueda = document.getElementById("buscador")?.value.toLowerCase() || "";
+    
     let productosFiltrados = productosGlobales.filter(producto =>
-        producto.nombre.toLowerCase().includes(busqueda)
+        producto.nombre.toLowerCase().includes(busqueda) ||
+        producto.marcas.some(marca => marca.toLowerCase().includes(busqueda))
     );
 
     if (categoriaSeleccionada !== "todos") {
